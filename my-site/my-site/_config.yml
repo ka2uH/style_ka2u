@@ -6,11 +6,11 @@ lang: ja
 
 # ユーザー名.github.io のリポジトリなら、url と baseurl はこのままでOK
 # For a user site (USERNAME.github.io), leave baseurl empty.
-url: "https://YOUR-USERNAME.github.io"
-baseurl: ""
+url: "https://ka2uH.github.io"
+baseurl: "/style_ka2u"
 
 # GitHubのユーザー名（フッターのリンクに表示）/ GitHub username (shown in footer)
-github_username: YOUR-USERNAME
+github_username: ka2uH
 
 # ===== Theme / テーマ =====
 theme: minima
