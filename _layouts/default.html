@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja" data-lang="both">
+<html lang="ja" data-lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
 (function () {
   try {
     var l = localStorage.getItem('lang');
-    if (l !== 'ja' && l !== 'en' && l !== 'both') {
+    if (l !== 'ja' && l !== 'en' {
       l = (navigator.language || '').toLowerCase().indexOf('ja') === 0 ? 'ja' : 'en';
     }
     document.documentElement.setAttribute('data-lang', l);
