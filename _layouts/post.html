@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% assign tja = page.title_ja | default: page.title %}
+{% assign ten = page.title_en | default: page.title %}
+<article>
+  <header class="chart page-head">
+    <div class="container">
+      <p class="meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+        {% if page.tags.size > 0 %}<span class="tags">{% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
+      </p>
+      <h1 class="post-title"><span class="ja">{{ tja }}</span><span class="en">{{ ten }}</span></h1>
+    </div>
+  </header>
+  <div class="container">
+    <div class="prose">
+{{ content }}
+    </div>
+  </div>
+  <nav class="container pager" aria-label="Log navigation">
+    <span>{% if page.previous %}<a href="{{ page.previous.url | relative_url }}">{% include bi.html ja="前のログ" en="Previous" %}</a>{% endif %}</span>
+    <span>{% if page.next %}<a href="{{ page.next.url | relative_url }}">{% include bi.html ja="次のログ" en="Next" %}</a>{% endif %}</span>
+  </nav>
+</article>

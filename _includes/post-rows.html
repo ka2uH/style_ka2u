@@ -1,0 +1,16 @@
+{% assign n = include.limit | default: 100 %}
+{% if site.posts.size == 0 %}
+<p class="empty">{% include bi.html ja="ログは準備中です。" en="Logs are coming soon." %}</p>
+{% else %}
+<ul class="rows">
+{% for post in site.posts limit: n %}
+{% assign tja = post.title_ja | default: post.title %}
+{% assign ten = post.title_en | default: post.title %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+    <a href="{{ post.url | relative_url }}">{% include bi.html ja=tja en=ten %}</a>
+    {% if post.tags.size > 0 %}<span class="tags">{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
+  </li>
+{% endfor %}
+</ul>
+{% endif %}

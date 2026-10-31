@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <svg class="brand-mark" width="30" height="16" viewBox="0 0 30 16" aria-hidden="true" focusable="false"><polyline points="0,9 7,9 10,2 14,15 17,9 30,9" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      {% include bi.html ja=site.brand_ja en=site.brand_en %}
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>{% include bi.html ja="自己紹介" en="About" %}</a>
+      <a href="{{ '/log/' | relative_url }}"{% if page.url contains '/log/' %} aria-current="page"{% endif %}>{% include bi.html ja="ログ" en="Log" %}</a>
+      <a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>{% include bi.html ja="連絡" en="Contact" %}</a>
+    </nav>
+    <div class="lang" role="group" aria-label="言語 / Language">
+      <button type="button" data-set-lang="ja">日本語</button>
+      <button type="button" data-set-lang="en">English</button>
+      <button type="button" data-set-lang="both">両方</button>
+    </div>
+  </div>
+</header>

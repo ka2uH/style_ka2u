@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja" data-lang="both">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+(function () {
+  try {
+    var l = localStorage.getItem('lang');
+    if (l !== 'ja' && l !== 'en' && l !== 'both') {
+      l = (navigator.language || '').toLowerCase().indexOf('ja') === 0 ? 'ja' : 'en';
+    }
+    document.documentElement.setAttribute('data-lang', l);
+  } catch (e) {}
+})();
+</script>
+{% seo %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#main">本文へ / Skip to content</a>
+{% include header.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include footer.html %}
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>
