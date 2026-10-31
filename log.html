@@ -1,0 +1,37 @@
+---
+layout: default
+title: Log
+permalink: /log/
+---
+<header class="chart page-head">
+  <div class="container">
+    <h1><span class="ja">ログ</span><span class="en">Log</span></h1>
+    <p class="lead ja">学習ログと活動記録です。新しいものが上に並びます。</p>
+    <p class="lead en">Learning logs and activity records, newest first.</p>
+  </div>
+</header>
+
+<div class="container">
+  {% if site.posts.size == 0 %}
+  <p class="empty">{% include bi.html ja="ログは準備中です。" en="Logs are coming soon." %}</p>
+  {% else %}
+  {% assign groups = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+  {% for g in groups %}
+  <h2 class="year">{{ g.name }}</h2>
+  <ol class="record">
+    {% for post in g.items %}
+    {% assign tja = post.title_ja | default: post.title %}
+    {% assign ten = post.title_en | default: post.title %}
+    <li class="entry">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m/%d" }}</time>
+      <div class="entry-body">
+        <a class="entry-title" href="{{ post.url | relative_url }}">{% include bi.html ja=tja en=ten %}</a>
+        {% if post.tags.size > 0 %}<span class="tags">{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  {% endfor %}
+  {% endif %}
+  <div style="height: 3rem"></div>
+</div>

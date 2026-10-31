@@ -1,0 +1,37 @@
+# ===== サイト設定 / Site settings =====
+title: "学習ログ / Learning Log"
+description: "電気電子工学・生体信号処理・BCI・AIの学習ログと活動記録。勉強会やイベントのお誘い歓迎。 / Learning log and activity record on electronics, biosignals, BCI and AI. Open to invitations."
+lang: ja
+
+# ヘッダーとフッターに表示する名前 / Name shown in header and footer
+brand_ja: "学習ログ"
+brand_en: "Learning Log"
+
+# GitHubのユーザー名 / GitHub username
+github_username: ka2uH
+
+# --- 公開URL / Public URL ---
+# 現在のリポジトリ名 style_ka2u で公開する設定です。
+# リポジトリ名を ka2uH.github.io に変えた場合は、baseurl を "" にしてください。
+# This is set for the repository "style_ka2u".
+# If you rename the repository to ka2uH.github.io, set baseurl to "".
+url: "https://ka2uH.github.io"
+baseurl: "/style_ka2u"
+
+# --- ビルド設定 / Build ---
+markdown: kramdown
+permalink: /log/:year/:month/:day/:title/
+plugins:
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+
+exclude:
+  - SETUP.md
+  - README.md
+  - "*.zip"

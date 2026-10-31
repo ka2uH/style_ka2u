@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<section class="chart hero">
+  <div class="container">
+    <h1 class="hero-title">
+      <span class="ja">学んだことを、<br>記録として残していく。</span>
+      <span class="en">A running record of what I'm learning.</span>
+    </h1>
+    <div class="lede ja">
+      <p>電気電子工学、生体信号処理、BCI、AI。高専で学んでいること、つくったものを、日本語と英語で書いています。勉強会やイベント、共同プロジェクトのお誘いを歓迎しています。</p>
+    </div>
+    <div class="lede en">
+      <p>Electronics, biosignal processing, BCI and AI. I write in Japanese and English about what I study and build at a KOSEN. Invitations to study groups, events and joint projects are welcome.</p>
+    </div>
+    <p class="actions">
+      <a class="btn primary" href="{{ '/log/' | relative_url }}">{% include bi.html ja="ログを読む" en="Read the log" %}</a>
+      <a class="btn" href="{{ '/contact/' | relative_url }}">{% include bi.html ja="お誘いはこちら" en="Invite me" %}</a>
+    </p>
+  </div>
+  <div class="trace">
+    {% include trace.html %}
+    {% assign recent = site.posts | slice: 0, 3 | reverse %}
+    {% for post in recent %}
+    {% assign off = recent.size | minus: forloop.index | times: 25 %}
+    {% assign left = 80 | minus: off %}
+    <a class="mark" style="--x: {{ left }}%" href="{{ post.url | relative_url }}" aria-label="{{ post.title | escape }} ({{ post.date | date: '%Y-%m-%d' }})"><span>{{ post.date | date: "%m/%d" }}</span></a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>{% include bi.html ja="最新のログ" en="Latest logs" %}</h2>
+      <a href="{{ '/log/' | relative_url }}">{% include bi.html ja="すべて見る" en="All logs" %}</a>
+    </div>
+    {% include post-rows.html limit=5 %}
+  </div>
+</section>
+
+<section class="invite">
+  <div class="container">
+    <h2>
+      <span class="ja">勉強会、イベント、共同プロジェクトのお誘いを歓迎します</span>
+      <span class="en">Open to study groups, events and joint projects</span>
+    </h2>
+    <p class="ja">日本語でも英語でも大丈夫です。声をかけてもらえるとうれしいです。</p>
+    <p class="en">Japanese or English is fine. I'd be glad to hear from you.</p>
+    <a class="btn" href="{{ '/contact/' | relative_url }}">{% include bi.html ja="連絡方法を見る" en="How to reach me" %}</a>
+  </div>
+</section>

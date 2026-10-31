@@ -1,0 +1,67 @@
+---
+layout: default
+title: Contact
+permalink: /contact/
+---
+<header class="chart page-head">
+  <div class="container">
+    <h1><span class="ja">連絡</span><span class="en">Contact</span></h1>
+    <p class="lead ja">お誘いやご連絡を歓迎しています。日本語でも英語でも大丈夫です。</p>
+    <p class="lead en">Invitations and messages are welcome, in Japanese or English.</p>
+  </div>
+</header>
+
+<div class="container">
+  <section class="block">
+    <h2>{% include bi.html ja="歓迎していること" en="What I'd love to hear about" %}</h2>
+    <dl class="fields">
+      <div class="field">
+        <dt>{% include bi.html ja="勉強会" en="Study groups" %}</dt>
+        <dd>
+          <p class="ja">勉強会、読書会、オンライン交流。</p>
+          <p class="en">Study groups, reading groups and online meetups.</p>
+        </dd>
+      </div>
+      <div class="field">
+        <dt>{% include bi.html ja="イベント" en="Events" %}</dt>
+        <dd>
+          <p class="ja">ハッカソン、コンテスト、学生向けイベント。</p>
+          <p class="en">Hackathons, competitions and student events.</p>
+        </dd>
+      </div>
+      <div class="field">
+        <dt>{% include bi.html ja="プロジェクト" en="Projects" %}</dt>
+        <dd>
+          <p class="ja">共同開発、共同研究、技術プロジェクト。</p>
+          <p class="en">Joint development, research and technical projects.</p>
+        </dd>
+      </div>
+      <div class="field">
+        <dt>{% include bi.html ja="情報交換" en="Exchange" %}</dt>
+        <dd>
+          <p class="ja">電気電子、生体信号処理、BCI、AI の話。</p>
+          <p class="en">Electronics, biosignal processing, BCI and AI.</p>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="block">
+    <h2>{% include bi.html ja="連絡方法" en="How to reach me" %}</h2>
+    <dl class="fields">
+      <div class="field">
+        <dt>GitHub</dt>
+        <dd><p><a href="https://github.com/{{ site.github_username }}">github.com/{{ site.github_username }}</a></p></dd>
+      </div>
+      <!-- TODO: 使いたい連絡手段を追加する（フォーム、X、LinkedIn など）。
+           メールアドレスの直書きは迷惑メールの原因になるので、フォームかSNSのDMがおすすめです。
+           TODO: Add other channels (a form, X, LinkedIn, ...).
+           Posting an email address directly can attract spam; a form or social DM is safer.
+      <div class="field">
+        <dt>Form</dt>
+        <dd><p><a href="https://forms.gle/xxxxxxxx">お問い合わせフォーム / Contact form</a></p></dd>
+      </div>
+      -->
+    </dl>
+  </section>
+</div>
