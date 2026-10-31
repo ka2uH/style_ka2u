@@ -1,0 +1,21 @@
+# ===== 制作物の一覧 / Project list =====
+# 新しいものが上に並びます。
+# 追加するときは、「- name_ja:」から links の行までをコピーして、一番上に貼り付けます。
+# インデント（行頭の空白）は、そのままにしてください。
+#
+# status は次の3つから選びます:
+#   done         … 完成
+#   in-progress  … 進行中
+#   idea         … 構想中
+#
+# 日本語か英語のどちらか片方だけでも書けます（片方だけなら、両方の表示で同じ文が出ます）。
+
+- name_ja: "（サンプル）制作物の名前"
+  name_en: "(Sample) Project name"
+  status: in-progress
+  desc_ja: "ここに、何をつくっているか、何のためか、使っている技術を1〜2文で書きます。公開する前にこのサンプルを書き換えてください。"
+  desc_en: "Write one or two sentences here: what you're building, why, and the technologies you use. Replace this sample before sharing the site."
+  tags: [Sample]
+  links:
+    - label: "GitHub"
+      url: "https://github.com/ka2uH"

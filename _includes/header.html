@@ -6,6 +6,7 @@
     </a>
     <nav class="site-nav" aria-label="Main">
       <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>{% include bi.html ja="自己紹介" en="About" %}</a>
+      <a href="{{ '/projects/' | relative_url }}"{% if page.url == '/projects/' %} aria-current="page"{% endif %}>{% include bi.html ja="制作物" en="Projects" %}</a>
       <a href="{{ '/log/' | relative_url }}"{% if page.url contains '/log/' %} aria-current="page"{% endif %}>{% include bi.html ja="ログ" en="Log" %}</a>
       <a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>{% include bi.html ja="連絡" en="Contact" %}</a>
     </nav>

@@ -1,0 +1,55 @@
+---
+layout: default
+title: Projects
+permalink: /projects/
+---
+<header class="chart page-head">
+  <div class="container">
+    <h1><span class="ja">制作物</span><span class="en">Projects</span></h1>
+    <p class="lead ja">つくったものと、いま取り組んでいることの一覧です。</p>
+    <p class="lead en">Things I've built and what I'm working on now.</p>
+  </div>
+</header>
+
+<div class="container">
+  {% assign items = site.data.projects %}
+  {% if items and items.size > 0 %}
+  <ul class="projects">
+    {% for p in items %}
+    {% assign nja = p.name_ja | default: p.name_en %}
+    {% assign nen = p.name_en | default: p.name_ja %}
+    {% assign dja = p.desc_ja | default: p.desc_en %}
+    {% assign den = p.desc_en | default: p.desc_ja %}
+    <li class="project">
+      <div class="project-side">
+        <h2>{% include bi.html ja=nja en=nen %}</h2>
+        {% if p.status == 'done' %}
+        <span class="status status-done">{% include bi.html ja="完成" en="Done" %}</span>
+        {% elsif p.status == 'in-progress' %}
+        <span class="status status-in-progress">{% include bi.html ja="進行中" en="In progress" %}</span>
+        {% elsif p.status == 'idea' %}
+        <span class="status status-idea">{% include bi.html ja="構想中" en="Idea" %}</span>
+        {% endif %}
+      </div>
+      <div class="project-main">
+        {% if dja == den %}
+        <p>{{ dja }}</p>
+        {% else %}
+        <p class="ja">{{ dja }}</p>
+        <p class="en">{{ den }}</p>
+        {% endif %}
+        {% if p.tags.size > 0 %}<span class="tags">{% for t in p.tags %}<span class="tag">{{ t }}</span>{% endfor %}</span>{% endif %}
+        {% if p.links.size > 0 %}
+        <ul class="project-links">
+          {% for l in p.links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">{% include bi.html ja="制作物は準備中です。" en="Projects are coming soon." %}</p>
+  {% endif %}
+  <div style="height: 3rem"></div>
+</div>
